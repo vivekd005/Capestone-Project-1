@@ -1,0 +1,520 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*  Variables  */
+
+/*  background colors  */
+$bgc-green: linear-gradient(100.08deg, #29B67F 0%, #3FC7F4 95.98%);
+$bgc-conclusion-1: linear-gradient(101.13deg, #090736 1.15%, #172233 98.16%);
+$bgc-conclusion-2: linear-gradient(282.48deg, #39B7FD -5.5%, #000000 60.76%);
+$bgc-header: #F8F8F8;
+$bgc-footer: #F6F6F6;
+$bgc-btn: linear-gradient(93.58deg, #3FC7F4 0%, #29B67F 100%);
+$bgc-btn-hover: rgb(98, 166, 206);
+$bgc-btn-cancel: #C4C4C4;
+$bgc-laptop: linear-gradient(100.08deg, #29B67F 0%, #3FC7F4 95.98%);
+
+/*  text colors  */
+$tc-black-100: #828282;
+$tc-black-400: #172233;
+$tc-black-footer: #757575;
+$tc-white: #FFFFFF;
+$tc-hover: rgb(23, 126, 103);
+$tc-btn-hover: rgba(66, 40, 40, 0.822);
+$tc-green: #29B67F;
+
+/*  box color  */
+$box-color: #FFFDFD;
+
+/*  line color  */
+$line-color: rgba(31, 192, 171, 0.705);
+
+
+h1,h2,h3{
+    font-weight: 700;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+h2{
+    font-size: 2.75rem;
+}
+
+h3{
+    font-size: 2.5rem;
+}
+
+span{
+    color: $tc-green;
+}
+
+p{
+    font-size: 1.875rem;
+    line-height: 2.375rem;
+}
+
+
+nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: $bgc-header; 
+    max-width: 100vmax;                                                                 /*  Navigation Bar Section  */
+    height: 8.125rem;
+    margin-bottom: 3.21rem;
+    
+
+    & .nav-bar-items{
+        list-style: none;
+        display: flex;
+        align-items: center; 
+    }
+
+
+    & ul{
+        list-style-type: none;
+        display: flex;
+    }
+
+
+    & li{
+        margin-right: 3.125rem ;
+        
+    }
+
+
+    & a{
+        text-decoration: none;
+        color: $tc-black-400 ;
+        font-size: 1.875rem;
+        }
+
+
+    & a:hover{
+        color: $tc-hover;
+    }
+
+
+    & button{
+        color: $tc-white;
+        width: 13.75rem;
+        height: 4.375rem;
+        background: $bgc-btn;
+        border-radius: 0.43rem;
+        margin-right: 10.375rem;
+        font-size: 1.875rem; 
+        border: 0;
+    }
+
+
+    & button:hover{
+        color: $tc-btn-hover;
+        transform: scale(1.1, 1.1);
+    }
+    
+}
+
+
+.section-container{
+    width: 78.61%;
+    max-width: 100%;
+    margin-inline: auto;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+
+    >*{
+        flex-basis: 45%;
+    }
+}
+
+
+
+/*  Registration Form Section  */
+.intro-form-section{
+    margin-bottom: 8.125rem;
+
+    
+    & .intro-section h1{
+        font-size: 3rem;
+        line-height: 3.69rem;
+        color: $tc-black-400;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+    }
+
+
+    & .intro-section p{
+        color: $tc-black-100;
+    }
+
+    
+    & .form-section{
+        border: $box-color;
+        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);                         
+        width: 90%;
+        min-width: 20.375rem;
+        max-width: 33.25rem;
+        max-height: 30.19rem;
+        border-radius: 0.625rem;  
+        padding: 1.75rem 0;
+    }
+
+   
+    & .form-section h3{
+        margin-bottom: 0.75rem;
+        font-size: 2.5rem;
+        line-height: 2.93rem;
+        text-align: center;
+        color: $tc-black-400;
+    }
+
+
+    & .form-section form{
+        margin: auto;
+        width: 80%;
+        max-width: 23.56rem;
+    }
+
+   
+    & .form-section form .form-input{
+        width: 100%;
+        margin-bottom: 0.5625rem;
+        overflow: hidden;
+    }
+    
+
+    & .phone-number, .email-id, .crt-password, .cfm-password{
+        width: 100%;
+        height: 2.5rem;
+        position: relative;
+        margin: 1rem 0 1rem 0;
+        
+    }
+
+    &  .form-section form .form-input input{
+        width: 100%;
+        height: 100%;
+        padding-top: 1rem;
+        border: none;
+        outline: none;
+    } 
+
+    &  .form-section form .form-input label{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        border-bottom: 0.0625rem solid $tc-black-100;
+    }
+
+    &  .form-section form .form-input label::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -0.125rem;
+        height: 100%;
+        width: 100%;
+        border-bottom: 0.25rem solid $line-color;
+        transform: translateX(-100%);
+        transition: all 0.5s ease;
+    }
+
+    & .form-section form .form-input label span{
+        position: absolute;
+        bottom: 0.1875rem;
+        transition: all 0.3s ease;
+        color: $tc-black-100;
+    }
+
+    & .phone-number input:focus + label span, .phone-number input:valid + label span,
+    .email-id input:focus + label span, .email-id input:valid + label span,
+    .crt-password input:focus + label span, .crt-password input:valid + label span,
+    .cfm-password input:focus + label span, .cfm-password input:valid + label span{
+        transform: translateY(-100%);
+    }
+
+    & .phone-number input:focus + label::after, .phone-number input:valid + label::after,
+    .email-id input:focus + label::after, .email-id input:valid + label::after,
+    .crt-password input:focus + label::after, .crt-password input:valid + label::after,
+    .cfm-password input:focus + label::after, .cfm-password input:valid + label::after{
+        transform: translateX(0%);
+    }
+
+    & .form-section form .form-btn{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    & .form-section form .form-btn input{
+        width: 100%;
+        max-width: 11.25rem;
+        height: 2.5rem;
+        border-radius: 0.3125rem;
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+        color: $tc-white;
+        border: none;
+    }
+
+
+    & .form-section form .form-btn .cancel-btn{
+        background-color: $bgc-btn-cancel;
+    }
+
+    & .form-section form .form-btn .submit-btn{
+        background: $bgc-green;
+    }
+
+    &  .cancel-btn:hover, .submit-btn:hover{
+        transform: scale(1.1); 
+    }
+
+    & .form-section .sign-in{
+        margin-top: 1.77625rem;
+        margin-left: 4.665rem;
+        font-size: 1.25rem;
+        line-height: 1.465rem;
+        color: $tc-black-100;
+    }
+
+    & .form-section .sign-in a{
+        font-weight: 700;
+        color: $tc-green;
+        text-decoration: none;
+    }
+
+}
+
+/*   Grid Section  */
+.grid-section{
+    padding-bottom: 2rem;
+
+    .grid-container{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(40%, 1fr)) ;
+        gap: 3rem;      
+    }
+
+    .grid-items{
+        width: 100%;
+        max-width: 31.25rem;
+    }
+
+    .grid-items .img{
+        aspect-ratio: 1.5 / 1;
+        max-width: 31.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .grid-txt h2{
+        line-height: 3.75rem;
+        color: $tc-black-400;
+        text-transform: capitalize;
+    }
+
+    .grid-txt p{
+        color: $tc-black-100;
+    }
+} 
+
+
+/*  Laptop Section  */
+.laptop-section{ 
+    padding: 2.75rem 0;
+    background: $bgc-laptop;
+    min-height: 30.5625rem;
+
+
+    & .txt h1{
+        text-transform: uppercase;
+        color: $tc-white;
+        line-height: 4rem;
+    }
+
+    & .txt p{
+        color: $tc-white;
+    }
+
+
+    & .img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-basis: 30.5625rem;
+        height: 30.5625rem;
+        background-color: $tc-white;
+        border-radius: 100%;
+    }
+
+    & img{
+        width: 24.3125rem;
+        height: 24.3125rem;
+    }
+}
+
+
+/*  Sign Up Section  */
+.sign-up-section{
+    padding: 5.625rem;
+    
+    .txt{
+    text-align: center;
+    color: $tc-black-100;
+    margin-bottom: 3rem;
+    }
+
+    & h1{
+        text-transform: uppercase;
+        line-height: 4.125rem;
+        margin-bottom: 0.75rem;
+        color: $tc-black-100;
+    }
+
+    & p{
+        color: $tc-black-100;
+        margin: auto;
+        max-width: 52rem;
+    }
+
+    .btn button{
+    display: block;
+    margin: auto;
+    max-width: 17.1875rem;
+    height: 4.125rem;
+    border-radius: 0.375rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    color: $tc-white;
+    border: none;
+    background: $bgc-green;
+    line-height: 2.5rem;
+    }
+
+    button:hover{
+        color: $tc-btn-hover;
+        transform: scale(1.1);
+    }
+}
+
+
+/*  Conclusion 1 Section  */
+.conclusion-section-1{
+    background: $bgc-conclusion-1;
+    padding: 3.5rem 0;
+
+    h2{
+        line-height: 3.5rem;
+        color: $tc-white;
+        margin-bottom: 1rem;
+    }
+
+    p{
+        color: $tc-white;
+    }
+
+    .img{
+        max-width: 34.5rem;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+
+/* Conclusion 2 Section  */
+.conclusion-section-2{
+    background: $bgc-conclusion-2;
+    padding: 3rem 0;
+
+    .txt{
+        color: $tc-white;
+    }
+
+    .txt h2{
+        line-height: 3.5rem;
+        margin-bottom: 1rem;
+    }
+}  
+
+
+
+footer{
+    padding: 3rem 2rem;
+ 
+    .footer-container{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+
+    .copyright p{
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: $tc-black-100;
+    }
+
+
+    .company-policies a{
+        text-decoration: none;
+        color: $tc-black-100;
+        padding: 1rem;
+    }
+
+    .company-policies a:hover{
+        color: $tc-hover;
+    }
+}
+
+
+
+
+
+/*  Media Queries  */
+@media (max-width: 768px){
+    .flex-container{
+        flex-direction: column;
+        justify-content: space-between;
+        width: 90%;
+    }
+
+    h1, h2, h3,p{
+        text-align: center;
+    }
+
+    .flex-container-order{
+        order: -1;
+    }
+
+    .footer-container{
+        flex-direction: column;
+        justify-content: space-between;
+
+        .copyright{
+            order: 2;
+        }
+
+        .company-policies{
+            order: 3;
+        }
+
+        .social-media{
+            order: 1;
+        }
+    }
+
+}   
